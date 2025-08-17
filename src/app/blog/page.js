@@ -10,12 +10,19 @@ export const dynamic = 'force-dynamic';
 
 export default async function Blog({ searchParams }) {
     await connect();
+
     const { page } = await searchParams;
     const curr_page = parseInt(page || "1", 10);
     const limit = 10;
     const skip = (curr_page - 1) * limit;
 
-    const posts = await Post.find().sort({ date: -1 }).skip(skip).limit(limit).populate('userId', 'firstname lastname').lean();
+    const posts = await Post.find()
+        .sort({ date: -1 })
+        .skip(skip)
+        .limit(limit)
+        .populate('userId', 'firstname lastname')
+        .lean();
+
     const total = await Post.countDocuments();
 
     return (
