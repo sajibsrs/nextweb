@@ -5,15 +5,10 @@
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
   font-family: var(--font-geist-sans);
+  width: 1400px;
+  padding: 80px;
+  margin: 0 auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,10 +23,7 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  display: block;
 }
 
 .main ol {
@@ -89,6 +81,11 @@ a.primary {
 a.secondary {
   border-color: var(--gray-alpha-200);
   min-width: 158px;
+}
+
+nav.pagination button {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
 }
 
 .footer {
