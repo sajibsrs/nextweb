@@ -1,4 +1,5 @@
 import styles from "@/app/page.module.css";
+import Footer from "@/components/Footer";
 import { connect } from "@/lib/db";
 import Comment from "@/models/Comment";
 import Post from "@/models/Post";
@@ -15,19 +16,21 @@ export default async function PostPage({ params }) {
     const commentCount = await Comment.countDocuments({ postId: post._id });
 
     return (
-        <main className={styles.main}>
-            <h1>{post.title}</h1>
-            <p><small>By {post.userId.firstname} {post.userId.lastname} on {new Date(post.date).toLocaleDateString('en-GB')}</small></p>
-            <p>{post.content}</p>
+        <>
+            <main className={styles.main}>
+                <h1>{post.title}</h1>
+                <p><small>By <em>{post.userId.firstname} {post.userId.lastname}</em> on {new Date(post.date).toLocaleDateString('en-GB')}</small></p>
+                <p>{post.content}</p>
 
-            <section>
-                <p>💬 <strong>Comments ({commentCount})</strong></p>
-                {comments.map(comment => (
-                    <div key={comment._id.toString()}>
-                        <p>☠️ <strong>{comment.userId.firstname} {comment.userId.lastname}</strong> <br /> - {comment.content}</p>
-                    </div>
-                ))}
-            </section>
-        </main>
+                <section>
+                    <p>💬 <strong>Comments ({commentCount})</strong></p>
+                    {comments.map(comment => (
+                        <div key={comment._id.toString()}>
+                            <p>☠️ <em>{comment.userId.firstname} {comment.userId.lastname}</em> <br /> - {comment.content}</p>
+                        </div>
+                    ))}
+                </section>
+            </main>
+        </>
     );
 }
