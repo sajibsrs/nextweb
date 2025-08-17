@@ -26,21 +26,17 @@ export default async function Blog({ searchParams }) {
     const total = await Post.countDocuments();
 
     return (
-        <>
-            <main className={styles.main}>
-                <h1>Blog</h1>
-                <section>
-                    {posts.map(post => (
-                        <article key={post._id.toString()}>
-                            <Link href={`/posts/${post.slug}`}><strong>{post.title}</strong></Link>
-                            <br />
-                            By {post.userId.firstname} {post.userId.lastname} on <small>{new Date(post.date).toLocaleDateString('en-GB')}</small>
-                        </article>
-                    ))}
-                </section>
-                <Pagination total={total} page={curr_page} limit={limit} />
-            </main>
-            <Footer />
-        </>
+        <main className={styles.main}>
+            <section>
+                {posts.map(post => (
+                    <article key={post._id.toString()}>
+                        <Link href={`/posts/${post.slug}`}><strong>{post.title}</strong></Link>
+                        <br />
+                        By <em>{post.userId.firstname} {post.userId.lastname}</em> on <small>{new Date(post.date).toLocaleDateString('en-GB')}</small>
+                    </article>
+                ))}
+            </section>
+            <Pagination total={total} page={curr_page} limit={limit} />
+        </main>
     );
 }
