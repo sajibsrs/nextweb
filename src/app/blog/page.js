@@ -1,10 +1,10 @@
-import Footer from "@/components/Footer";
+import Footer from "@/ui/footer";
 import { connect } from "@/lib/db";
 import Post from "@/models/Post";
 import "@/models/User";
 import Link from "next/link";
 import styles from "../page.module.css";
-import Pagination from "./Pagination";
+import Pagination from "./pagination";
 
 export const dynamic = 'force-dynamic';
 

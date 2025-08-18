@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Footer from "@/ui/footer";
 import styles from "@/app/page.module.css";
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Footer from "@/ui/footer";
 import styles from "@/app/page.module.css";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export default function PostLayout({ children }) {
     return (
         <>
             <section className={styles.title}>
-                <h2>Posts</h2>
+                <h2>Post</h2>
                 <hr />
             </section>
             {children}
