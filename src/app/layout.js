@@ -1,4 +1,3 @@
-import Counter from "@/components/Counter";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "./page.module.css";
