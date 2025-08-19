@@ -65,6 +65,40 @@ footer {
   margin: 80px 0;
 }
 
+form div {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+form div label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form div input {
+  padding: 0.5rem;
+}
+
+form button {
+  margin-top: 1rem;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.error {
+  color: rgb(222, 76, 76);
+}
+
+li.error {
+  list-style: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
