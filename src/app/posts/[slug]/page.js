@@ -1,9 +1,8 @@
 import styles from "@/app/page.module.css";
-import Footer from "@/ui/footer";
 import { connect } from "@/lib/db";
-import Comment from "@/models/Comment";
-import Post from "@/models/Post";
-import "@/models/User";
+import Comment from "@/models/comment";
+import Post from "@/models/post";
+import "@/models/user";
 
 export const dynamic = 'force-dynamic';
 

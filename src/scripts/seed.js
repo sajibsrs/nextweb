@@ -5,9 +5,9 @@ const { connect } = await import('../lib/db.js');
 const { faker } = await import('@faker-js/faker');
 const bcrypt = (await import('bcryptjs')).default;
 const slugify = (await import('slugify')).default;
-const User = (await import('../models/User.js')).default;
-const Post = (await import('../models/Post.js')).default;
-const Comment = (await import('../models/Comment.js')).default;
+const User = (await import('../models/user.js')).default;
+const Post = (await import('../models/post.js')).default;
+const Comment = (await import('../models/comment.js')).default;
 
 async function seed() {
     await connect();

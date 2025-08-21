@@ -1,7 +1,6 @@
-import Footer from "@/ui/footer";
 import { connect } from "@/lib/db";
-import Post from "@/models/Post";
-import "@/models/User";
+import Post from "@/models/post";
+import "@/models/user";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Pagination from "./pagination";
