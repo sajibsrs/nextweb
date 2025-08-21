@@ -11,9 +11,9 @@ export default async function Blog({ searchParams }) {
     await connect();
 
     const { page } = await searchParams;
-    const curr_page = parseInt(page || "1", 10);
+    const currPage = parseInt(page || "1", 10);
     const limit = 10;
-    const skip = (curr_page - 1) * limit;
+    const skip = (currPage - 1) * limit;
 
     const posts = await Post.find()
         .sort({ date: -1 })
@@ -35,7 +35,7 @@ export default async function Blog({ searchParams }) {
                     </article>
                 ))}
             </section>
-            <Pagination total={total} page={curr_page} limit={limit} />
+            <Pagination total={total} page={currPage} limit={limit} />
         </main>
     );
 }
