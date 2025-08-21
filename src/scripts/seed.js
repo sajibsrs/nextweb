@@ -1,7 +1,7 @@
 import nextEnv from '@next/env';
 nextEnv.loadEnvConfig(process.cwd());
 
-const { dbConnect } = await import('../lib/db.js');
+const { connect } = await import('../lib/db.js');
 const { faker } = await import('@faker-js/faker');
 const bcrypt = (await import('bcryptjs')).default;
 const slugify = (await import('slugify')).default;
@@ -10,7 +10,7 @@ const Post = (await import('../models/Post.js')).default;
 const Comment = (await import('../models/Comment.js')).default;
 
 async function seed() {
-    await dbConnect();
+    await connect();
 
     console.log('Clearing old data...');
     await Promise.all([
